@@ -63,6 +63,18 @@ map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+let g:CommandTMaxHeight=10
+" fix for the ESC key to dismiss the dialog
+let g:CommandTCancelMap=['<ESC>','<C-c>']
+
+" to alternate easily between buffers
+nnoremap <leader><leader> <c-^>
+
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 if has("statusline") && !&cp
   set laststatus=2  " always show the status bar
