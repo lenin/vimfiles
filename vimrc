@@ -1,13 +1,20 @@
 set nocompatible                " choose no compatibility with legacy vi
-syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 
 call pathogen#infect()
 filetype plugin indent on       " load file type plugins + indentation
 
-set background=dark
-color molokai
+syntax enable
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+set t_Co=16
+let g:solarized_termcolors=16
+colorscheme solarized
+
 set nonumber
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
